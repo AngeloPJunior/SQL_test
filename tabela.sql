@@ -1,3 +1,6 @@
+create database 'test_Mysql'
+use 'test_Mysql'
+
 --Criação de tabela para as disciplinas
 CREATE TABLE disciplinas(                
     id_disc int PRIMARY KEY,        --Primary key significa que o id_disc não pode conter valores repetidos(duas disciplinas com o mesmo id)
