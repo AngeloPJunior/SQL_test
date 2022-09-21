@@ -1,9 +1,10 @@
 --Criação de tabela para as disciplinas
 CREATE TABLE disciplinas(                
-    id_disc VARCHAR(10) NOT NULL PRIMARY KEY,        --Primary key significa que o id_disc não pode conter valores repetidos(duas disciplinas com o mesmo id)
-    NOME VARCHAR(100) NOT NULL,                     -- NOT NULL siginifica que os valores não podem ser nulos
-    qtd_cred INT NOT NULL);
-
+    id_disc int PRIMARY KEY,        --Primary key significa que o id_disc não pode conter valores repetidos(duas disciplinas com o mesmo id)
+    disc VARCHAR(100) NOT NULL,                     -- NOT NULL siginifica que os valores não podem ser nulos
+    qtd_cred INT NOT NULL
+)
+Create unique index ix_disc on disc (disc)
 
 --Inserindo valores para o tabela de disciplinas
 INSERT INTO disciplinas (id_disc,nome,qtd_cred) VALUES ('12902','PI: DESENVOLVIMENTO DE SISTEMAS WEB ','4'); 
