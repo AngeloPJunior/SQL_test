@@ -1,50 +1,44 @@
-use RelAlP;
+create database trabalho_xastre;
 
-create table ALUNO(
-	RA int,
-    NOME varchar(255),
-    SOBRENOME varchar(255)
+use trabalho_xastre;
+
+create table Alunos(
+	RA int(8),
+    Nome varchar(20),
+    Sobrenome varchar(30)
 );
 
-create table PROFESSOR(
+insert into Alunos(RA, Nome, Sobrenome)
+	values(22007411, 'Rafael', 'Mazolini'), 
+		  (22000341, 'Pedro', 'Pistarini'),
+          (22006132, 'Vinicius', 'Godoy'),
+          (22004797, 'Matheus', 'Ecke'),
+          (22000397, 'Victor', 'Aroni'),
+          (22009788, 'Felipe', 'Roque'),
+		  (22002293, 'Pedro', 'Di Grazia');
+          
+create table Professores(
 	RP int,
-    NOME_P varchar(255)
+    Nome varchar(20)
 );
 
-create table MATERIA(
-	id_mat int primary key auto_increment,
-    NOME_M varchar(255),
-    QTD_CRED int
+insert into Professores(RP, Nome)
+	values(12008765, 'Xastre'),
+          (10000001, 'Panain'),
+          (10000000, 'Ângela'),
+          (11008765, 'Freitas');
+          
+create table Materia(
+	ID int(5),
+    Nome varchar(255),
+    Creditos int(2)
 );
 
-create table Rel_Aluno_Prof_Materia(
-	id_rel int primary key auto_increment,
-    RA int,
-    RP int
-);
-
-insert into ALUNO (RA, NOME, SOBRENOME)
-values (22002293, 'Pedro', 'Di Grazia'),
-	   (22006132, 'Vinicius', 'Godoy'),
-       (22000341, 'Pedro', 'Pistarini');
-
-insert into PROFESSOR (RP, NOME_P)
-values (22002132, 'Leandro'),
-	   (22012345, 'Ricardo'),
-       (22009876, 'Valdomiro');
-
-insert into MATERIA (NOME_M, QTD_CRED)
-values ('Desenvolvimento Web', 20),
-	   ('Organizacao Sistemas', 30),
-       ('Calculo 1', 40);
-
-insert into Rel_Aluno_Prof_Materia (RA, RP)
-values (22002293, 22002132),
-	   (22006132, 22012345),
-       (22000341, 22009876);
-
-select * from ALUNO;
-select * from PROFESSOR;
-select * from MATERIA;
-select * from Rel_Aluno_Prof_Materia;
-select * from ALUNO,PROFESSOR,MATERIA,Rel_Aluno_Prof_Materia;
+insert into Materia(ID, Nome, Creditos)
+	values(12903, 'Organização de Sistemas de Computação', 6),
+          (12902, 'PI: Desenvolvimento de Sistemas Web', 6),
+          (11445, 'Cálculo I', 6),
+          (12901, 'Robótica Computacional', 4),
+          (11135, 'Teologia e Fenômeno Humano', 2);
+          
+select * from Alunos, Professores, Materia;
