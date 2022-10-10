@@ -1,6 +1,6 @@
-create database trabalho_xastre;
+create database teste;
 
-use trabalho_xastre;
+use teste;
 
 create table Alunos(
 	RA int(8),
@@ -9,13 +9,8 @@ create table Alunos(
 );
 
 insert into Alunos(RA, Nome, Sobrenome)
-	values(22007411, 'Rafael', 'Mazolini'), 
-		  (22000341, 'Pedro', 'Pistarini'),
-          (22006132, 'Vinicius', 'Godoy'),
-          (22004797, 'Matheus', 'Ecke'),
-          (22000397, 'Victor', 'Aroni'),
-          (22009788, 'Felipe', 'Roque'),
-		  (22002293, 'Pedro', 'Di Grazia');
+	values(21008767, 'Angelo', 'Junior');
+		 
           
 create table Professores(
 	RP int,
@@ -24,9 +19,7 @@ create table Professores(
 
 insert into Professores(RP, Nome)
 	values(12008765, 'Xastre'),
-          (10000001, 'Panain'),
-          (10000000, 'Ângela'),
-          (11008765, 'Freitas');
+          (10000001, 'Panain');
           
 create table Materia(
 	ID int(5),
@@ -36,9 +29,6 @@ create table Materia(
 
 insert into Materia(ID, Nome, Creditos)
 	values(12903, 'Organização de Sistemas de Computação', 6),
-          (12902, 'PI: Desenvolvimento de Sistemas Web', 6),
-          (11445, 'Cálculo I', 6),
-          (12901, 'Robótica Computacional', 4),
-          (11135, 'Teologia e Fenômeno Humano', 2);
+          (12902, 'PI: Desenvolvimento de Sistemas Web', 6);
           
 select * from Alunos, Professores, Materia;
